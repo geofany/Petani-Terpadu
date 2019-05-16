@@ -39,7 +39,7 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel34 = new javax.swing.JLabel();
         pengaduanBaruBtn = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
+        prosesBtn = new javax.swing.JLabel();
         historyPengaduanBtn = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         judul1 = new javax.swing.JLabel();
@@ -80,6 +80,7 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
         minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel21.setBackground(new java.awt.Color(27, 27, 27));
         jPanel21.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -109,17 +110,12 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
         pengaduanBaruBtn.setText(" BUAT PENGADUAN BARU");
         jPanel2.add(pengaduanBaruBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(118, 185, 0));
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/verifikasi fill.png"))); // NOI18N
-        jLabel29.setText(" DALAM PROSES");
-        jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel29MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
+        prosesBtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        prosesBtn.setForeground(new java.awt.Color(118, 185, 0));
+        prosesBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prosesBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/verifikasi fill.png"))); // NOI18N
+        prosesBtn.setText(" DALAM PROSES");
+        jPanel2.add(prosesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         historyPengaduanBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         historyPengaduanBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -435,8 +431,12 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
         status5.setText(status);
     }
     
-    public void confirm(String isi){
-        JOptionPane.showConfirmDialog(this, isi);
+    public int confirm(String isi){
+        return JOptionPane.showConfirmDialog(this, isi, "Confirm", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE);
+    }
+    
+    public void message(String isi){
+        JOptionPane.showMessageDialog(this, isi);
     }
     
     private void headMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headMouseDragged
@@ -451,13 +451,6 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
         mouseX = evt.getX();
         mouseY = evt.getY();
     }//GEN-LAST:event_headMousePressed
-
-    private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
-        // TODO add your handling code here:
-        V_prosesPengaduan proses = new V_prosesPengaduan();
-        proses.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel29MouseClicked
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         // TODO add your handling code here:
@@ -516,7 +509,6 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
     private javax.swing.JLabel historyPengaduanBtn;
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -546,6 +538,7 @@ public class V_prosesPengaduan extends javax.swing.JFrame {
     private javax.swing.JLabel minimizeBtn;
     private javax.swing.JLabel pengaduanBaruBtn;
     private javax.swing.JLabel pengaduanBtn;
+    private javax.swing.JLabel prosesBtn;
     private javax.swing.JLabel settingBtn;
     private javax.swing.JLabel status1;
     private javax.swing.JLabel status2;

@@ -52,6 +52,7 @@ public class V_detailHomeAdmin extends javax.swing.JFrame {
         minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel27.setBackground(new java.awt.Color(27, 27, 27));
         jPanel27.setMaximumSize(new java.awt.Dimension(1366, 768));

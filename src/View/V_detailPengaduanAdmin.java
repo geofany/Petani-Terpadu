@@ -60,6 +60,7 @@ public class V_detailPengaduanAdmin extends javax.swing.JFrame {
         minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel21.setBackground(new java.awt.Color(27, 27, 27));
         jPanel21.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -90,7 +91,7 @@ public class V_detailPengaduanAdmin extends javax.swing.JFrame {
         deskripsiPengaduanTextArea.setOpaque(false);
         scroll.setViewportView(deskripsiPengaduanTextArea);
 
-        jPanel10.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 460, 250));
+        jPanel10.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 460, 340));
         jPanel10.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 480, -1));
 
         judulPengaduanField.setEditable(false);

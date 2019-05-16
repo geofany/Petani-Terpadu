@@ -17,6 +17,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,16 +39,48 @@ public class C_editPengaduan {
        this.views.klikPengaduanBaru(new tblPengaduanBaru());
        this.views.klikHistoryPengaduan(new tblHistoryPengaduan());
        this.views.klikSimpan(new tblSimpan());
+       this.views.klikAttachFile1(new tblAttachFile1());
+       this.views.klikAttachFile2(new tblAttachFile2());
        
    }
 
+   private class tblAttachFile1 extends MouseAdapter {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File gambar1 = chooser.getSelectedFile();
+            String filename1 = gambar1.getAbsolutePath();
+            views.setFoto1(filename1);
+            
+        }
+    }
+    
+    private class tblAttachFile2 extends MouseAdapter {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File gambar2 = chooser.getSelectedFile();
+            String filename2 = gambar2.getAbsolutePath();
+            views.setFoto2(filename2);
+            
+        }
+    }
+   
     private class tblSimpan implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            views.confirm("Apakah anda yakin ingin merubah pengaduan ?");
-            Controller.C_prosesPengaduan prosesPengaduan = new Controller.C_prosesPengaduan(new V_prosesPengaduan());
-            views.setVisible(false);
+            int response = views.confirm("Apakah Anda Yakin Ingin Mengubah Aduan ?");
+            if (response == JOptionPane.YES_OPTION) {
+                //DIISI MODEL
+                views.message("Data Berhasil Disimpan");
+                Controller.C_prosesPengaduan proses = new Controller.C_prosesPengaduan(new V_prosesPengaduan());
+                views.setVisible(false);
+            }
         }
     }
    

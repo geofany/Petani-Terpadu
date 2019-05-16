@@ -5,7 +5,10 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.io.File;
+import java.util.Calendar;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -37,28 +40,25 @@ public class V_tambahEvent extends javax.swing.JFrame {
         jPanel22 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        judulEvent = new javax.swing.JTextField();
         scroll = new javax.swing.JScrollPane();
         isi = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        eventBtn1 = new javax.swing.JLabel();
-        homeBtn3 = new javax.swing.JLabel();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
+        postingBtn = new javax.swing.JButton();
+        attachFileBtn = new javax.swing.JLabel();
+        text4 = new javax.swing.JLabel();
+        dateChooser = new datechooser.beans.DateChooserCombo();
         foto1 = new javax.swing.JLabel();
-        homeBtn5 = new javax.swing.JLabel();
-        homeBtn6 = new javax.swing.JLabel();
+        text1 = new javax.swing.JLabel();
+        text2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        namaField = new javax.swing.JTextField();
-        homeBtn7 = new javax.swing.JLabel();
+        lokasiField = new javax.swing.JTextField();
+        text3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        namaField1 = new javax.swing.JTextField();
-        homeBtn8 = new javax.swing.JLabel();
+        jamField = new javax.swing.JTextField();
+        text5 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        namaField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        narahubungField = new javax.swing.JTextField();
+        head = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -67,7 +67,9 @@ public class V_tambahEvent extends javax.swing.JFrame {
         pengaduanBtn = new javax.swing.JLabel();
         eventBtn = new javax.swing.JLabel();
         homeBtn = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
+        exitBtn = new javax.swing.JLabel();
+        minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -85,17 +87,12 @@ public class V_tambahEvent extends javax.swing.JFrame {
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel10.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 68, 460, -1));
 
-        jTextField1.setBackground(new java.awt.Color(26, 26, 26));
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("Judul Event");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 55));
+        judulEvent.setBackground(new java.awt.Color(26, 26, 26));
+        judulEvent.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        judulEvent.setForeground(new java.awt.Color(255, 255, 255));
+        judulEvent.setText("Judul Event");
+        judulEvent.setBorder(null);
+        jPanel10.add(judulEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 40));
 
         scroll.setBackground(new java.awt.Color(0, 0, 0));
         scroll.setOpaque(false);
@@ -112,176 +109,95 @@ public class V_tambahEvent extends javax.swing.JFrame {
 
         jPanel10.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 460, 220));
 
-        jButton1.setBackground(new java.awt.Color(118, 185, 0));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton1.setText("POSTING");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jPanel10.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, -1, -1));
+        postingBtn.setBackground(new java.awt.Color(118, 185, 0));
+        postingBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        postingBtn.setText("POSTING");
+        jPanel10.add(postingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, -1, -1));
 
-        eventBtn1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        eventBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        eventBtn1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        eventBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
-        eventBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eventBtn1MouseClicked(evt);
-            }
-        });
-        jPanel10.add(eventBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        attachFileBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        attachFileBtn.setForeground(new java.awt.Color(255, 255, 255));
+        attachFileBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        attachFileBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
+        jPanel10.add(attachFileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
-        homeBtn3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        homeBtn3.setForeground(new java.awt.Color(255, 255, 255));
-        homeBtn3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn3.setText("Waktu Event");
-        homeBtn3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtn3MouseClicked(evt);
-            }
-        });
-        jPanel10.add(homeBtn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 110, 30));
+        text4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text4.setForeground(new java.awt.Color(255, 255, 255));
+        text4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text4.setText("Waktu Event");
+        jPanel10.add(text4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 110, 30));
 
-        dateChooserCombo1.setFieldFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 18));
-        jPanel10.add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 300, 30));
+        dateChooser.setFieldFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 18));
+        jPanel10.add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 300, 30));
 
         foto1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         foto1.setForeground(new java.awt.Color(255, 255, 255));
         foto1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         foto1.setText("Belum Ada Lampiran");
-        foto1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                foto1MouseClicked(evt);
-            }
-        });
         jPanel10.add(foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 250, 30));
 
-        homeBtn5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        homeBtn5.setForeground(new java.awt.Color(255, 255, 255));
-        homeBtn5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn5.setText("Foto Event");
-        homeBtn5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtn5MouseClicked(evt);
-            }
-        });
-        jPanel10.add(homeBtn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 30));
+        text1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text1.setForeground(new java.awt.Color(255, 255, 255));
+        text1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text1.setText("Foto Event");
+        jPanel10.add(text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 30));
 
-        homeBtn6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        homeBtn6.setForeground(new java.awt.Color(255, 255, 255));
-        homeBtn6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn6.setText("Tanggal Event");
-        homeBtn6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtn6MouseClicked(evt);
-            }
-        });
-        jPanel10.add(homeBtn6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 120, 30));
+        text2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text2.setForeground(new java.awt.Color(255, 255, 255));
+        text2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text2.setText("Tanggal Event");
+        jPanel10.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 120, 30));
         jPanel10.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 300, 10));
 
-        namaField.setBackground(new java.awt.Color(26, 26, 26));
-        namaField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        namaField.setForeground(new java.awt.Color(255, 255, 255));
-        namaField.setBorder(null);
-        namaField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                namaFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                namaFieldFocusLost(evt);
-            }
-        });
-        jPanel10.add(namaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 300, 55));
+        lokasiField.setBackground(new java.awt.Color(26, 26, 26));
+        lokasiField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lokasiField.setForeground(new java.awt.Color(255, 255, 255));
+        lokasiField.setBorder(null);
+        jPanel10.add(lokasiField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 300, 30));
 
-        homeBtn7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        homeBtn7.setForeground(new java.awt.Color(255, 255, 255));
-        homeBtn7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn7.setText("Lokasi Event");
-        homeBtn7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtn7MouseClicked(evt);
-            }
-        });
-        jPanel10.add(homeBtn7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 110, 30));
+        text3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text3.setForeground(new java.awt.Color(255, 255, 255));
+        text3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text3.setText("Lokasi Event");
+        jPanel10.add(text3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 110, 30));
         jPanel10.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 300, 10));
 
-        namaField1.setBackground(new java.awt.Color(26, 26, 26));
-        namaField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        namaField1.setForeground(new java.awt.Color(255, 255, 255));
-        namaField1.setBorder(null);
-        namaField1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                namaField1FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                namaField1FocusLost(evt);
-            }
-        });
-        jPanel10.add(namaField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 300, 55));
+        jamField.setBackground(new java.awt.Color(26, 26, 26));
+        jamField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jamField.setForeground(new java.awt.Color(255, 255, 255));
+        jamField.setBorder(null);
+        jPanel10.add(jamField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 300, 30));
 
-        homeBtn8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        homeBtn8.setForeground(new java.awt.Color(255, 255, 255));
-        homeBtn8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeBtn8.setText("Narahubung");
-        homeBtn8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtn8MouseClicked(evt);
-            }
-        });
-        jPanel10.add(homeBtn8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 110, 30));
+        text5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text5.setForeground(new java.awt.Color(255, 255, 255));
+        text5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text5.setText("Narahubung");
+        jPanel10.add(text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 110, 30));
         jPanel10.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 300, 10));
 
-        namaField2.setBackground(new java.awt.Color(26, 26, 26));
-        namaField2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        namaField2.setForeground(new java.awt.Color(255, 255, 255));
-        namaField2.setBorder(null);
-        namaField2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                namaField2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                namaField2FocusLost(evt);
-            }
-        });
-        jPanel10.add(namaField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 300, 55));
+        narahubungField.setBackground(new java.awt.Color(26, 26, 26));
+        narahubungField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        narahubungField.setForeground(new java.awt.Color(255, 255, 255));
+        narahubungField.setBorder(null);
+        jPanel10.add(narahubungField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 300, 30));
 
         jPanel22.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 500, 650));
 
         jPanel21.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 77, 1330, 680));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/head.png"))); // NOI18N
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        head.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/head.png"))); // NOI18N
+        head.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        head.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jLabel1MouseDragged(evt);
+                headMouseDragged(evt);
             }
         });
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        head.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel1MousePressed(evt);
+                headMousePressed(evt);
             }
         });
-        jPanel21.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 280, 27));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Exit.png"))); // NOI18N
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-        jPanel21.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 10, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Minimize.png"))); // NOI18N
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel21.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Maximize.png"))); // NOI18N
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
+        jPanel21.add(head, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 280, 27));
 
         jPanel1.setBackground(new java.awt.Color(25, 25, 25));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -307,11 +223,6 @@ public class V_tambahEvent extends javax.swing.JFrame {
         pengaduanBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pengaduanBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pengaduan blank.png"))); // NOI18N
         pengaduanBtn.setText(" PENGADUAN");
-        pengaduanBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pengaduanBtnMouseClicked(evt);
-            }
-        });
         jPanel1.add(pengaduanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
         eventBtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -319,11 +230,6 @@ public class V_tambahEvent extends javax.swing.JFrame {
         eventBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EVENT FILL.png"))); // NOI18N
         eventBtn.setText(" EVENT");
-        eventBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eventBtnMouseClicked(evt);
-            }
-        });
         jPanel1.add(eventBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
         homeBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -331,25 +237,33 @@ public class V_tambahEvent extends javax.swing.JFrame {
         homeBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/BERANDA BLANK.png"))); // NOI18N
         homeBtn.setText(" BERANDA");
-        homeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                homeBtnMouseClicked(evt);
-            }
-        });
         jPanel1.add(homeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel21.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EXIT BLANK.png"))); // NOI18N
-        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel21MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, -1, -1));
+        logoutBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EXIT BLANK.png"))); // NOI18N
+        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, -1, -1));
 
         jPanel21.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1330, 50));
+
+        exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Exit.png"))); // NOI18N
+        exitBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitBtnMouseClicked(evt);
+            }
+        });
+        jPanel21.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 10, -1, -1));
+
+        minimizeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Minimize.png"))); // NOI18N
+        minimizeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeBtnMouseClicked(evt);
+            }
+        });
+        jPanel21.add(minimizeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -365,124 +279,80 @@ public class V_tambahEvent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
+    public void klikEvent(MouseAdapter action){
+        eventBtn.addMouseListener(action);
+    }
+    
+    public void klikHome(MouseAdapter action) {
+        homeBtn.addMouseListener(action);
+    }
+    
+    public void klikPengaduan(MouseAdapter action){
+        pengaduanBtn.addMouseListener(action);
+    }
+    
+    public void klikLogout(MouseAdapter action){
+        logoutBtn.addMouseListener(action);
+    }
+    
+    public void klikPosting(ActionListener action){
+        postingBtn.addActionListener(action);
+    }
+    
+    public void klikAttachFile(MouseAdapter action){
+        attachFileBtn.addMouseListener(action);
+    }
+    
+    public String getJudul(){
+        return judulEvent.getText();
+    }
+    
+    public void setFoto(String isi){
+        foto1.setText(isi);
+    }
+    
+    public Calendar getTanggal(){
+        return dateChooser.getSelectedDate();
+    }
+    
+    public String getLokasi(){
+        return lokasiField.getText();
+    }
+    
+    public String getWaktu(){
+        return jamField.getText();
+    }
+    
+    public String getNarahubung(){
+        return narahubungField.getText();
+    }
+    
+    public String getIsi(){
+        return isi.getText();
+    }
+    
+    private void headMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headMouseDragged
         // TODO add your handling code here:
         int koordinatX = evt.getXOnScreen();
         int koordinatY = evt.getYOnScreen();
         this.setLocation(koordinatX-mouseX, koordinatY-mouseY);
-    }//GEN-LAST:event_jLabel1MouseDragged
+    }//GEN-LAST:event_headMouseDragged
 
-    private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
+    private void headMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headMousePressed
         // TODO add your handling code here:
         mouseX = evt.getX();
         mouseY = evt.getY();
-    }//GEN-LAST:event_jLabel1MousePressed
+    }//GEN-LAST:event_headMousePressed
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         // TODO add your handling code here:
         this.dispose();
         System.exit(1);
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_exitBtnMouseClicked
 
-    private void eventBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventBtn1MouseClicked
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File gambar1 = chooser.getSelectedFile();
-        String filename1 = gambar1.getAbsolutePath();
-        foto1.setText(filename1);
-    }//GEN-LAST:event_eventBtn1MouseClicked
-
-    private void homeBtn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtn3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeBtn3MouseClicked
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void foto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foto1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_foto1MouseClicked
-
-    private void homeBtn5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtn5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeBtn5MouseClicked
-
-    private void homeBtn6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtn6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeBtn6MouseClicked
-
-    private void namaFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFieldFocusGained
-        // TODO add your handling code here:
-        if (namaField.getText().equalsIgnoreCase("Nama Lengkap")) {
-            namaField.setText("");
-        }
-    }//GEN-LAST:event_namaFieldFocusGained
-
-    private void namaFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaFieldFocusLost
-        // TODO add your handling code here:
-        if (namaField.getText().equalsIgnoreCase("")) {
-            namaField.setText("Nama Lengkap");
-        }
-    }//GEN-LAST:event_namaFieldFocusLost
-
-    private void homeBtn7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtn7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeBtn7MouseClicked
-
-    private void namaField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaField1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaField1FocusGained
-
-    private void namaField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaField1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaField1FocusLost
-
-    private void homeBtn8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtn8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeBtn8MouseClicked
-
-    private void namaField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaField2FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaField2FocusGained
-
-    private void namaField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_namaField2FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaField2FocusLost
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Event Berhasil Ditambahkan");
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void pengaduanBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pengaduanBtnMouseClicked
-        // TODO add your handling code here:
-        V_pengaduanAdmin pengaduan = new V_pengaduanAdmin();
-        pengaduan.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_pengaduanBtnMouseClicked
-
-    private void eventBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventBtnMouseClicked
-        // TODO add your handling code here:
-        V_eventAdmin event = new V_eventAdmin();
-        event.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_eventBtnMouseClicked
-
-    private void homeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeBtnMouseClicked
-        // TODO add your handling code here:
-        V_homeAdmin home = new V_homeAdmin();
-        home.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_homeBtnMouseClicked
-
-    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        // TODO add your handling code here:
-        V_login logout = new V_login();
-        logout.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel21MouseClicked
+    private void minimizeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeBtnMouseClicked
+        this.setState(V_login.ICONIFIED);    // TODO add your handling code here:
+    }//GEN-LAST:event_minimizeBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -521,24 +391,15 @@ public class V_tambahEvent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private javax.swing.JLabel attachFileBtn;
+    private datechooser.beans.DateChooserCombo dateChooser;
     private javax.swing.JLabel eventBtn;
-    private javax.swing.JLabel eventBtn1;
+    private javax.swing.JLabel exitBtn;
     private javax.swing.JLabel foto1;
+    private javax.swing.JLabel head;
     private javax.swing.JLabel homeBtn;
-    private javax.swing.JLabel homeBtn3;
-    private javax.swing.JLabel homeBtn5;
-    private javax.swing.JLabel homeBtn6;
-    private javax.swing.JLabel homeBtn7;
-    private javax.swing.JLabel homeBtn8;
     private javax.swing.JTextArea isi;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
@@ -550,11 +411,19 @@ public class V_tambahEvent extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField namaField;
-    private javax.swing.JTextField namaField1;
-    private javax.swing.JTextField namaField2;
+    private javax.swing.JTextField jamField;
+    private javax.swing.JTextField judulEvent;
+    private javax.swing.JLabel logoutBtn;
+    private javax.swing.JTextField lokasiField;
+    private javax.swing.JLabel minimizeBtn;
+    private javax.swing.JTextField narahubungField;
     private javax.swing.JLabel pengaduanBtn;
+    private javax.swing.JButton postingBtn;
     private javax.swing.JScrollPane scroll;
+    private javax.swing.JLabel text1;
+    private javax.swing.JLabel text2;
+    private javax.swing.JLabel text3;
+    private javax.swing.JLabel text4;
+    private javax.swing.JLabel text5;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,9 +6,6 @@
 package View;
 
 import java.awt.event.MouseAdapter;
-import java.io.File;
-import javax.accessibility.AccessibleContext;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -139,11 +136,6 @@ public class V_pengaduan extends javax.swing.JFrame {
         text2.setForeground(new java.awt.Color(255, 255, 255));
         text2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text2.setText("Bukti Foto 2");
-        text2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                text2MouseClicked(evt);
-            }
-        });
         jPanel10.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
 
         attach1Btn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -162,11 +154,6 @@ public class V_pengaduan extends javax.swing.JFrame {
         text.setForeground(new java.awt.Color(255, 255, 255));
         text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text.setText("Bukti Foto 1");
-        text.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                textMouseClicked(evt);
-            }
-        });
         jPanel10.add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, 30));
 
         attach2Btn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -357,6 +344,14 @@ public class V_pengaduan extends javax.swing.JFrame {
         return jenisPengaduanComboBox.getSelectedIndex();
     }
     
+    public void klikAttachFile1(MouseAdapter action){
+        attach1Btn.addMouseListener(action);
+    }
+    
+    public void klikAttachFile2(MouseAdapter action){
+        attach2Btn.addMouseListener(action);
+    }
+    
     public void setFoto1(String teks){
         foto1.setText(teks);
     }
@@ -409,14 +404,6 @@ public class V_pengaduan extends javax.swing.JFrame {
             deskripsiPengaduanTextArea.setText("Isi Pengaduan");
         }
     }//GEN-LAST:event_deskripsiPengaduanTextAreaFocusLost
-
-    private void text2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_text2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_text2MouseClicked
-
-    private void textMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textMouseClicked
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         // TODO add your handling code here:

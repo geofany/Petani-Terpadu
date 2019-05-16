@@ -11,14 +11,14 @@ import java.awt.event.MouseAdapter;
  *
  * @author GeGa
  */
-public class V_histoyPengaduan extends javax.swing.JFrame {
+public class V_detailPengaduan extends javax.swing.JFrame {
 
     /**
-     * Creates new form HistoyPengaduan
+     * Creates new form V_detailPengaduan
      */
     int mouseX;
     int mouseY;
-    public V_histoyPengaduan() {
+    public V_detailPengaduan() {
         initComponents();
     }
 
@@ -33,33 +33,26 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
 
         jPanel21 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        scroll = new javax.swing.JScrollPane();
+        deskripsiPengaduanTextArea = new javax.swing.JTextArea();
+        jSeparator2 = new javax.swing.JSeparator();
+        judulPengaduanField = new javax.swing.JTextField();
+        text2 = new javax.swing.JLabel();
+        attach1Btn = new javax.swing.JLabel();
+        foto1 = new javax.swing.JLabel();
+        text = new javax.swing.JLabel();
+        attach2Btn = new javax.swing.JLabel();
+        foto2 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jenisPengaduanField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        pengaduanBaruBtn = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         historyPengaduanBtn = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        pengaduanBaruBtn = new javax.swing.JLabel();
         prosesPengaduanBtn = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        judul1 = new javax.swing.JLabel();
-        jenisPengaduan1 = new javax.swing.JLabel();
-        status1 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        status2 = new javax.swing.JLabel();
-        judul2 = new javax.swing.JLabel();
-        jenisPengaduan2 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        status3 = new javax.swing.JLabel();
-        judul3 = new javax.swing.JLabel();
-        jenisPengaduan3 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        status4 = new javax.swing.JLabel();
-        judul4 = new javax.swing.JLabel();
-        jenisPengaduan4 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        judul5 = new javax.swing.JLabel();
-        jenisPengaduan5 = new javax.swing.JLabel();
-        status5 = new javax.swing.JLabel();
         head = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         homeBtn = new javax.swing.JLabel();
@@ -69,13 +62,12 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         pengaduanBtn = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        logoutBtn = new javax.swing.JLabel();
         settingBtn = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         exitBtn = new javax.swing.JLabel();
         minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel21.setBackground(new java.awt.Color(27, 27, 27));
         jPanel21.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -86,15 +78,98 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         jPanel22.setBackground(new java.awt.Color(51, 51, 51));
         jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel10.setBackground(new java.awt.Color(25, 25, 25));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        scroll.setBackground(new java.awt.Color(0, 0, 0));
+        scroll.setOpaque(false);
+
+        deskripsiPengaduanTextArea.setBackground(new java.awt.Color(25, 25, 25));
+        deskripsiPengaduanTextArea.setColumns(20);
+        deskripsiPengaduanTextArea.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        deskripsiPengaduanTextArea.setForeground(new java.awt.Color(255, 255, 255));
+        deskripsiPengaduanTextArea.setRows(5);
+        deskripsiPengaduanTextArea.setText("Sawah Saya Diserang Oleh Hama Wereng");
+        deskripsiPengaduanTextArea.setBorder(null);
+        deskripsiPengaduanTextArea.setOpaque(false);
+        deskripsiPengaduanTextArea.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                deskripsiPengaduanTextAreaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                deskripsiPengaduanTextAreaFocusLost(evt);
+            }
+        });
+        scroll.setViewportView(deskripsiPengaduanTextArea);
+
+        jPanel10.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 460, 300));
+        jPanel10.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, 480, -1));
+
+        judulPengaduanField.setEditable(false);
+        judulPengaduanField.setBackground(new java.awt.Color(26, 26, 26));
+        judulPengaduanField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        judulPengaduanField.setForeground(new java.awt.Color(255, 255, 255));
+        judulPengaduanField.setText("Tolong Bantu Usir Hama");
+        judulPengaduanField.setBorder(null);
+        judulPengaduanField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                judulPengaduanFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                judulPengaduanFieldFocusLost(evt);
+            }
+        });
+        jPanel10.add(judulPengaduanField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 480, 40));
+
+        text2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text2.setForeground(new java.awt.Color(255, 255, 255));
+        text2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text2.setText("Bukti Foto 2");
+        jPanel10.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
+
+        attach1Btn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        attach1Btn.setForeground(new java.awt.Color(255, 255, 255));
+        attach1Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        attach1Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
+        jPanel10.add(attach1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
+
+        foto1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        foto1.setForeground(new java.awt.Color(255, 255, 255));
+        foto1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        foto1.setText("Foto1.jpg");
+        jPanel10.add(foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 250, 30));
+
+        text.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        text.setForeground(new java.awt.Color(255, 255, 255));
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text.setText("Bukti Foto 1");
+        jPanel10.add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, 30));
+
+        attach2Btn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        attach2Btn.setForeground(new java.awt.Color(255, 255, 255));
+        attach2Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        attach2Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
+        jPanel10.add(attach2Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
+
+        foto2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        foto2.setForeground(new java.awt.Color(255, 255, 255));
+        foto2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        foto2.setText("Foto2.jpg");
+        jPanel10.add(foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 250, 30));
+        jPanel10.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 480, -1));
+
+        jenisPengaduanField.setEditable(false);
+        jenisPengaduanField.setBackground(new java.awt.Color(26, 26, 26));
+        jenisPengaduanField.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jenisPengaduanField.setForeground(new java.awt.Color(255, 255, 255));
+        jenisPengaduanField.setText("Serangan Hama");
+        jenisPengaduanField.setBorder(null);
+        jPanel10.add(jenisPengaduanField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 480, 50));
+
+        jPanel22.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 500, 600));
+
         jPanel2.setBackground(new java.awt.Color(25, 25, 25));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        pengaduanBaruBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        pengaduanBaruBtn.setForeground(new java.awt.Color(255, 255, 255));
-        pengaduanBaruBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        pengaduanBaruBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/tambah blank.png"))); // NOI18N
-        pengaduanBaruBtn.setText(" BUAT PENGADUAN BARU");
-        jPanel2.add(pengaduanBaruBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/BATAS.png"))); // NOI18N
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, 50));
@@ -102,15 +177,22 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1330, 10));
 
-        historyPengaduanBtn.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        historyPengaduanBtn.setForeground(new java.awt.Color(118, 185, 0));
+        historyPengaduanBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        historyPengaduanBtn.setForeground(new java.awt.Color(255, 255, 255));
         historyPengaduanBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        historyPengaduanBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/history fill.png"))); // NOI18N
+        historyPengaduanBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/history blank.png"))); // NOI18N
         historyPengaduanBtn.setText(" HISTORY PENGADUAN");
         jPanel2.add(historyPengaduanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/BATAS.png"))); // NOI18N
-        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, -1, 50));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/BATAS.png"))); // NOI18N
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, -1, 50));
+
+        pengaduanBaruBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        pengaduanBaruBtn.setForeground(new java.awt.Color(255, 255, 255));
+        pengaduanBaruBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pengaduanBaruBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/tambah blank.png"))); // NOI18N
+        pengaduanBaruBtn.setText(" BUAT PENGADUAN BARU");
+        jPanel2.add(pengaduanBaruBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         prosesPengaduanBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         prosesPengaduanBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,112 +202,6 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         jPanel2.add(prosesPengaduanBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
 
         jPanel22.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1330, -1));
-
-        jPanel4.setBackground(new java.awt.Color(26, 26, 26));
-        jPanel4.setForeground(new java.awt.Color(26, 26, 26));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        judul1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        judul1.setForeground(new java.awt.Color(255, 255, 255));
-        judul1.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel4.add(judul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jenisPengaduan1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jenisPengaduan1.setForeground(new java.awt.Color(153, 153, 153));
-        jenisPengaduan1.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel4.add(jenisPengaduan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        status1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        status1.setForeground(new java.awt.Color(255, 0, 0));
-        status1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status1.setText("Ditolak");
-        jPanel4.add(status1, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 30, 70, -1));
-
-        jPanel22.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1310, 100));
-
-        jPanel6.setBackground(new java.awt.Color(26, 26, 26));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        status2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        status2.setForeground(new java.awt.Color(118, 185, 0));
-        status2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status2.setText("Diterima");
-        jPanel6.add(status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
-
-        judul2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        judul2.setForeground(new java.awt.Color(255, 255, 255));
-        judul2.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel6.add(judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jenisPengaduan2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jenisPengaduan2.setForeground(new java.awt.Color(153, 153, 153));
-        jenisPengaduan2.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel6.add(jenisPengaduan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jPanel22.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 1310, 100));
-
-        jPanel7.setBackground(new java.awt.Color(26, 26, 26));
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        status3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        status3.setForeground(new java.awt.Color(118, 185, 0));
-        status3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status3.setText("Diterima");
-        jPanel7.add(status3, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
-
-        judul3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        judul3.setForeground(new java.awt.Color(255, 255, 255));
-        judul3.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel7.add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jenisPengaduan3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jenisPengaduan3.setForeground(new java.awt.Color(153, 153, 153));
-        jenisPengaduan3.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel7.add(jenisPengaduan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jPanel22.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 1310, 100));
-
-        jPanel8.setBackground(new java.awt.Color(26, 26, 26));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        status4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        status4.setForeground(new java.awt.Color(118, 185, 0));
-        status4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status4.setText("Diterima");
-        jPanel8.add(status4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 30, -1, -1));
-
-        judul4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        judul4.setForeground(new java.awt.Color(255, 255, 255));
-        judul4.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel8.add(judul4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jenisPengaduan4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jenisPengaduan4.setForeground(new java.awt.Color(153, 153, 153));
-        jenisPengaduan4.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel8.add(jenisPengaduan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jPanel22.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 1310, 100));
-
-        jPanel9.setBackground(new java.awt.Color(26, 26, 26));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        judul5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        judul5.setForeground(new java.awt.Color(255, 255, 255));
-        judul5.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel9.add(judul5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jenisPengaduan5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jenisPengaduan5.setForeground(new java.awt.Color(153, 153, 153));
-        jenisPengaduan5.setText("Lorem Ipsum Dolor Sit Amet");
-        jPanel9.add(jenisPengaduan5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        status5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        status5.setForeground(new java.awt.Color(255, 0, 0));
-        status5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status5.setText("Ditolak");
-        jPanel9.add(status5, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 30, 70, -1));
-
-        jPanel22.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 1310, 100));
 
         jPanel21.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 77, 1330, 680));
 
@@ -284,17 +260,17 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         jLabel9.setText(" GEOFANY GALINDRA");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, -1, -1));
 
-        logoutBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
-        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EXIT BLANK.png"))); // NOI18N
-        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
-
         settingBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         settingBtn.setForeground(new java.awt.Color(255, 255, 255));
         settingBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         settingBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/SETTING BLANK.png"))); // NOI18N
         jPanel1.add(settingBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, -1, -1));
+
+        logoutBtn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EXIT BLANK.png"))); // NOI18N
+        jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
         jPanel21.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1330, 50));
 
@@ -330,68 +306,70 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void klikHome(MouseAdapter action){
-        homeBtn.addMouseListener(action);
-    }   
-    
-    public void klikEvent(MouseAdapter action) {
+    public void klikEvent(MouseAdapter action){
         eventBtn.addMouseListener(action);
+    }
+    
+    public void klikHome(MouseAdapter action) {
+        homeBtn.addMouseListener(action);
     }
     
     public void klikLogout(MouseAdapter action){
         logoutBtn.addMouseListener(action);
     }
     
-    public void klikSetting(MouseAdapter action){
+    public void klikSetting(MouseAdapter action) {
         settingBtn.addMouseListener(action);
-    }
-    
-    public void klikPengaduanBaru(MouseAdapter action){
-        pengaduanBaruBtn.addMouseListener(action);
     }
     
     public void klikProsesPengaduan(MouseAdapter action){
         prosesPengaduanBtn.addMouseListener(action);
     }
     
-    public void klikDetail(MouseAdapter action){
-        judul1.addMouseListener(action);
-        judul2.addMouseListener(action);
-        judul3.addMouseListener(action);
-        judul4.addMouseListener(action);
-        judul5.addMouseListener(action);
+    public void klikHistoryPengaduan(MouseAdapter action){
+        historyPengaduanBtn.addMouseListener(action);
     }
     
-    public void setPengaduan1(String Judul, String Jenis, String Status){
-        judul1.setText(Judul);
-        jenisPengaduan1.setText(Jenis);
-        status1.setText(Status);
+    public void klikTambahPengaduan(MouseAdapter action){
+        pengaduanBaruBtn.addMouseListener(action);
     }
     
-    public void setPengaduan2(String Judul, String Jenis, String Status){
-        judul2.setText(Judul);
-        jenisPengaduan2.setText(Jenis);
-        status2.setText(Status);
+    public void setDetail(String Judul, String Jenis, String Foto1, String Foto2, String isi){
+        judulPengaduanField.setText(Judul);
+        jenisPengaduanField.setText(Jenis);
+        foto1.setText(Foto1);
+        foto2.setText(Foto2);
+        deskripsiPengaduanTextArea.setText(isi);
     }
     
-    public void setPengaduan3(String Judul, String Jenis, String Status){
-        judul3.setText(Judul);
-        jenisPengaduan3.setText(Jenis);
-        status3.setText(Status);
-    }
-    
-    public void setPengaduan4(String Judul, String Jenis, String Status){
-        judul4.setText(Judul);
-        jenisPengaduan4.setText(Jenis);
-        status4.setText(Status);
-    }
-    
-    public void setPengaduan5(String Judul, String Jenis, String Status){
-        judul5.setText(Judul);
-        jenisPengaduan5.setText(Jenis);
-        status5.setText(Status);
-    }
-    
+    private void deskripsiPengaduanTextAreaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_deskripsiPengaduanTextAreaFocusGained
+        // TODO add your handling code here:
+        if (deskripsiPengaduanTextArea.getText().equalsIgnoreCase("Isi Pengaduan")) {
+            deskripsiPengaduanTextArea.setText("");
+        }
+    }//GEN-LAST:event_deskripsiPengaduanTextAreaFocusGained
+
+    private void deskripsiPengaduanTextAreaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_deskripsiPengaduanTextAreaFocusLost
+        // TODO add your handling code here:
+        if (deskripsiPengaduanTextArea.getText().equalsIgnoreCase("")) {
+            deskripsiPengaduanTextArea.setText("Isi Pengaduan");
+        }
+    }//GEN-LAST:event_deskripsiPengaduanTextAreaFocusLost
+
+    private void judulPengaduanFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_judulPengaduanFieldFocusGained
+        // TODO add your handling code here:
+        if (judulPengaduanField.getText().equalsIgnoreCase("Judul Pengaduan")) {
+            judulPengaduanField.setText("");
+        }
+    }//GEN-LAST:event_judulPengaduanFieldFocusGained
+
+    private void judulPengaduanFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_judulPengaduanFieldFocusLost
+        // TODO add your handling code here:
+        if (judulPengaduanField.getText().equalsIgnoreCase("")) {
+            judulPengaduanField.setText("Judul Pengaduan");
+        }
+    }//GEN-LAST:event_judulPengaduanFieldFocusLost
+
     private void headMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headMouseDragged
         // TODO add your handling code here:
         int koordinatX = evt.getXOnScreen();
@@ -432,67 +410,59 @@ public class V_histoyPengaduan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(V_histoyPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_detailPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(V_histoyPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_detailPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(V_histoyPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_detailPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(V_histoyPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(V_detailPengaduan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new V_histoyPengaduan().setVisible(true);
+                new V_detailPengaduan().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel attach1Btn;
+    private javax.swing.JLabel attach2Btn;
+    private javax.swing.JTextArea deskripsiPengaduanTextArea;
     private javax.swing.JLabel eventBtn;
     private javax.swing.JLabel exitBtn;
+    private javax.swing.JLabel foto1;
+    private javax.swing.JLabel foto2;
     private javax.swing.JLabel head;
     private javax.swing.JLabel historyPengaduanBtn;
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel jenisPengaduan1;
-    private javax.swing.JLabel jenisPengaduan2;
-    private javax.swing.JLabel jenisPengaduan3;
-    private javax.swing.JLabel jenisPengaduan4;
-    private javax.swing.JLabel jenisPengaduan5;
-    private javax.swing.JLabel judul1;
-    private javax.swing.JLabel judul2;
-    private javax.swing.JLabel judul3;
-    private javax.swing.JLabel judul4;
-    private javax.swing.JLabel judul5;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField jenisPengaduanField;
+    private javax.swing.JTextField judulPengaduanField;
     private javax.swing.JLabel logoutBtn;
     private javax.swing.JLabel minimizeBtn;
     private javax.swing.JLabel pengaduanBaruBtn;
     private javax.swing.JLabel pengaduanBtn;
     private javax.swing.JLabel prosesPengaduanBtn;
+    private javax.swing.JScrollPane scroll;
     private javax.swing.JLabel settingBtn;
-    private javax.swing.JLabel status1;
-    private javax.swing.JLabel status2;
-    private javax.swing.JLabel status3;
-    private javax.swing.JLabel status4;
-    private javax.swing.JLabel status5;
+    private javax.swing.JLabel text;
+    private javax.swing.JLabel text2;
     // End of variables declaration//GEN-END:variables
 }

@@ -65,9 +65,6 @@ public class V_eventUser extends javax.swing.JFrame {
         judul6 = new javax.swing.JLabel();
         foto6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         homeBtn = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -78,6 +75,8 @@ public class V_eventUser extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         settingBtn = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JLabel();
+        exitBtn = new javax.swing.JLabel();
+        minimizeBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -288,23 +287,6 @@ public class V_eventUser extends javax.swing.JFrame {
         });
         jPanel21.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 280, 27));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Exit.png"))); // NOI18N
-        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-        jPanel21.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 10, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Minimize.png"))); // NOI18N
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel21.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Maximize.png"))); // NOI18N
-        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel21.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
-
         jPanel1.setBackground(new java.awt.Color(25, 25, 25));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -358,6 +340,24 @@ public class V_eventUser extends javax.swing.JFrame {
         jPanel1.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
         jPanel21.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1330, 50));
+
+        exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Exit.png"))); // NOI18N
+        exitBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitBtnMouseClicked(evt);
+            }
+        });
+        jPanel21.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 10, -1, -1));
+
+        minimizeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Minimize.png"))); // NOI18N
+        minimizeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeBtnMouseClicked(evt);
+            }
+        });
+        jPanel21.add(minimizeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -417,11 +417,15 @@ public class V_eventUser extends javax.swing.JFrame {
         mouseY = evt.getY();
     }//GEN-LAST:event_jLabel1MousePressed
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         // TODO add your handling code here:
         this.dispose();
         System.exit(1);
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_exitBtnMouseClicked
+
+    private void minimizeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeBtnMouseClicked
+        this.setState(V_login.ICONIFIED);    // TODO add your handling code here:
+    }//GEN-LAST:event_minimizeBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -461,6 +465,7 @@ public class V_eventUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel eventBtn;
+    private javax.swing.JLabel exitBtn;
     private javax.swing.JLabel foto1;
     private javax.swing.JLabel foto2;
     private javax.swing.JLabel foto3;
@@ -470,9 +475,6 @@ public class V_eventUser extends javax.swing.JFrame {
     private javax.swing.JLabel homeBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
@@ -505,6 +507,7 @@ public class V_eventUser extends javax.swing.JFrame {
     private javax.swing.JLabel judul6;
     private javax.swing.JLabel judul7;
     private javax.swing.JLabel logoutBtn;
+    private javax.swing.JLabel minimizeBtn;
     private javax.swing.JLabel pengaduanBtn;
     private javax.swing.JLabel settingBtn;
     // End of variables declaration//GEN-END:variables

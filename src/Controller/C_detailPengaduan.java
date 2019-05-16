@@ -7,7 +7,6 @@ package Controller;
 
 import View.V_akun;
 import View.V_detailPengaduan;
-import View.V_editPengaduan;
 import View.V_eventUser;
 import View.V_histoyPengaduan;
 import View.V_homeUser;
@@ -16,30 +15,27 @@ import View.V_pengaduan;
 import View.V_prosesPengaduan;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author GeGa
  */
-public class C_prosesPengaduan {
-    View.V_prosesPengaduan views;
-   
-   public C_prosesPengaduan(V_prosesPengaduan views){
-       this.views = views;
-       this.views.setVisible(true);
-       this.views.klikEvent(new tblEvent());
-       this.views.klikHome(new tblHome());
-       this.views.klikLogout(new tblLogout());
-       this.views.klikSetting(new tblSetting());
-       this.views.klikPengaduanBaru(new tblPengaduanBaru());
-       this.views.klikHistoryPengaduan(new tblHistoryPengaduan());
-       this.views.klikEditPengaduan(new tblEditPengaduan());
-//       this.views.klikDetailPengaduan(new tblDetailPengaduan());
-       this.views.klikHapusPengaduan(new tblHapusPengaduan());
-   }
-
-   private class tblEvent extends MouseAdapter {
+public class C_detailPengaduan {
+    View.V_detailPengaduan views;
+    
+    public C_detailPengaduan(V_detailPengaduan views){
+        this.views = views;
+        this.views.setVisible(true);
+        this.views.klikEvent(new tblEvent());
+        this.views.klikHome(new tblHome());
+        this.views.klikLogout(new tblLogout());
+        this.views.klikSetting(new tblSetting());
+        this.views.klikProsesPengaduan(new tblProsesPengaduan());
+        this.views.klikTambahPengaduan(new tblTambahPengaduan());
+        this.views.klikHistoryPengaduan(new tblHistoryPengaduan());        
+    }
+    
+    private class tblEvent extends MouseAdapter {
 
         @Override
         public void mouseClicked(MouseEvent e) {            
@@ -79,11 +75,11 @@ public class C_prosesPengaduan {
         }
     }
 
-    private class tblPengaduanBaru extends MouseAdapter {
+    private class tblProsesPengaduan extends MouseAdapter {
 
         @Override
         public void mouseClicked(MouseEvent e) {            
-            Controller.C_pengaduan pengaduanBaru = new Controller.C_pengaduan(new V_pengaduan());
+            Controller.C_prosesPengaduan prosesPengaduan = new Controller.C_prosesPengaduan(new V_prosesPengaduan());
             views.setVisible(false);
             
         }
@@ -98,39 +94,14 @@ public class C_prosesPengaduan {
             
         }
     }
-
-    private class tblEditPengaduan extends MouseAdapter {
+    
+    private class tblTambahPengaduan extends MouseAdapter {
 
         @Override
         public void mouseClicked(MouseEvent e) {            
-            Controller.C_editPengaduan editPengaduan = new Controller.C_editPengaduan(new V_editPengaduan());
+            Controller.C_pengaduan tambahPengaduan = new Controller.C_pengaduan(new V_pengaduan());
             views.setVisible(false);
             
         }
     }
-
-    private class tblDetailPengaduan extends MouseAdapter {
-
-        @Override
-        public void mouseClicked(MouseEvent e) {            
-            Controller.C_detailPengaduan detail = new Controller.C_detailPengaduan(new V_detailPengaduan());
-            views.setVisible(false);
-            
-        }
-    }
-
-    private class tblHapusPengaduan extends MouseAdapter {
-
-        @Override
-        public void mouseClicked(MouseEvent e) {            
-            int response = views.confirm("Apakah Anda Yakin Ingin Menghapus Pengaduan Ini ?");
-            if (response == JOptionPane.YES_OPTION) {
-                //DIISI MODEL
-                views.message("Pengaduan Berhasil Dihapus");
-                Controller.C_prosesPengaduan proses = new Controller.C_prosesPengaduan(new V_prosesPengaduan());
-                views.setVisible(false);
-            } 
-        }
-    }
-   
 }

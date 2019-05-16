@@ -7,8 +7,6 @@ package View;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-import java.io.File;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,7 +51,7 @@ public class V_editPengaduan extends javax.swing.JFrame {
         jenisPengaduanComboBox = new javax.swing.JComboBox<>();
         simpanBtn = new javax.swing.JButton();
         text2 = new javax.swing.JLabel();
-        attachFile1Btn = new javax.swing.JLabel();
+        attachFileBtn1 = new javax.swing.JLabel();
         foto1 = new javax.swing.JLabel();
         text1 = new javax.swing.JLabel();
         attachFileBtn2 = new javax.swing.JLabel();
@@ -187,11 +185,11 @@ public class V_editPengaduan extends javax.swing.JFrame {
         });
         jPanel10.add(text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
 
-        attachFile1Btn.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        attachFile1Btn.setForeground(new java.awt.Color(255, 255, 255));
-        attachFile1Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        attachFile1Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
-        jPanel10.add(attachFile1Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
+        attachFileBtn1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        attachFileBtn1.setForeground(new java.awt.Color(255, 255, 255));
+        attachFileBtn1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        attachFileBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/folder.png"))); // NOI18N
+        jPanel10.add(attachFileBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
         foto1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         foto1.setForeground(new java.awt.Color(255, 255, 255));
@@ -364,6 +362,14 @@ public class V_editPengaduan extends javax.swing.JFrame {
         prosesPengaduanBtn.addMouseListener(action);
     }
     
+    public void klikAttachFile1(MouseAdapter action){
+        attachFileBtn1.addMouseListener(action);
+    }
+    
+    public void klikAttachFile2(MouseAdapter action){
+        attachFileBtn2.addMouseListener(action);
+    }
+    
     public void setJudulPengaduan(String teks){
         judulPengaduanField.setText(teks);
     }
@@ -372,8 +378,8 @@ public class V_editPengaduan extends javax.swing.JFrame {
         return judulPengaduanField.getText();
     }
     
-    public void setJenisPengaduan(String teks){
-        
+    public void setJenisPengaduan(int indeks){
+        jenisPengaduanComboBox.setSelectedIndex(indeks);
     }
     
     public int getJenisPengaduan(){
@@ -392,9 +398,23 @@ public class V_editPengaduan extends javax.swing.JFrame {
         simpanBtn.addActionListener(action);
     }
     
-    public void confirm(String isi){
-        JOptionPane.showConfirmDialog(this, isi);
+    public void setFoto1(String teks){
+        foto1.setText(teks);
     }
+    
+    public void setFoto2(String teks){
+        foto2.setText(teks);
+    }
+    
+    public int confirm(String isi){
+        return JOptionPane.showConfirmDialog(this, isi, "Confirm", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE);
+    }
+    
+    public void message(String isi){
+        JOptionPane.showMessageDialog(this, isi);
+    }
+    
+    
     
     private void jLabel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseDragged
         // TODO add your handling code here:
@@ -496,7 +516,7 @@ public class V_editPengaduan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel attachFile1Btn;
+    private javax.swing.JLabel attachFileBtn1;
     private javax.swing.JLabel attachFileBtn2;
     private javax.swing.JTextArea deskripsiPengaduanTextArea;
     private javax.swing.JLabel eventBtn;

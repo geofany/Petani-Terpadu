@@ -13,6 +13,8 @@ import View.V_histoyPengaduan;
 import View.V_prosesPengaduan;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import javax.swing.JFileChooser;
 /**
  *
  * @author GeGa
@@ -30,8 +32,36 @@ public class C_pengaduan {
         this.views.klikProsesPengaduan(new tblProsesPengaduan());
         this.views.klikHistoryPengaduan(new tblHistoryPengaduan());
         this.views.klikKirim(new tblKirim());
+        this.views.klikAttachFile1(new tblAttachFile1());
+        this.views.klikAttachFile2(new tblAttachFile2());
     }
 
+    private class tblAttachFile1 extends MouseAdapter {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File gambar1 = chooser.getSelectedFile();
+            String filename1 = gambar1.getAbsolutePath();
+            views.setFoto1(filename1);
+            
+        }
+    }
+    
+    private class tblAttachFile2 extends MouseAdapter {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {            
+            JFileChooser chooser = new JFileChooser();
+            chooser.showOpenDialog(null);
+            File gambar2 = chooser.getSelectedFile();
+            String filename2 = gambar2.getAbsolutePath();
+            views.setFoto2(filename2);
+            
+        }
+    }
+    
     private class tblEvent extends MouseAdapter {
 
         @Override

@@ -367,7 +367,7 @@ public class V_eventAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public void klikHome(MouseAdapter action){
+    public void klikHome(MouseAdapter action){
         homeBtn.addMouseListener(action);
     }
     
@@ -377,6 +377,11 @@ public class V_eventAdmin extends javax.swing.JFrame {
     
     public void klikLogout(MouseAdapter action){
         logoutBtn.addMouseListener(action);
+    }
+    
+    public void klikTambah(MouseAdapter action){
+        tambahEventBaru.addMouseListener(action);
+        tambahEventBtn.addMouseListener(action);
     }
     
     public void klikDetail(MouseAdapter action){
@@ -467,6 +472,15 @@ public class V_eventAdmin extends javax.swing.JFrame {
     public void setTanggal5(String Tanggal5){
         tanggal5.setText(Tanggal5);
     }
+    
+    public int confirm(String isi){
+        return JOptionPane.showConfirmDialog(this, isi, "Confirm", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE);
+    }
+    
+    public void message(String isi){
+        JOptionPane.showMessageDialog(this, isi);
+    }
+    
     private void headMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headMouseDragged
         // TODO add your handling code here:
         int koordinatX = evt.getXOnScreen();
